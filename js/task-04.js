@@ -12,6 +12,6 @@ const incrementEl = document.querySelector('button[data-action="increment"]');
 incrementEl.addEventListener('click', increment)
 
 function increment(){
-	counterValue +=1;
+	counterValue += 1;
   document.getElementById('value').innerHTML = counterValue;
 }
