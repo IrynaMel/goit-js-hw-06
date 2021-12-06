@@ -11,15 +11,15 @@ const formElements = event.currentTarget.elements;
 const email = formElements.email.value;
 const password = formElements.password.value;
 
-if (email === '' || password === ''){
+if (!email || !password){
     alert('All fields must be filled')
 }
-else { const formData = {
+ const formData = {
             email,
             password};
                         
     console.log(formData);
     form.reset()
-}  
+
 }
  
