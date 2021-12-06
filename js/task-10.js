@@ -8,16 +8,16 @@ const deleteboxBtn = document.querySelector('button[data-destroy]');
 const boxes = document.querySelector("#boxes");
 
 
-const inputChange = (e) => {
+function inputChange(e)  {
   input.setAttribute("count", Number(e.currentTarget.value));
 };
 input.addEventListener("input", inputChange);
 
 let baseboxSize = 30;
 
-const createBoxes = () => {
+function createBoxes (e) {
   let countBox = Number(input.getAttribute("count"));
-  console.log(countBox);
+  
   for (let i = 0; i < countBox; i+=1) {
     baseboxSize += 10;
     const newBox = document.createElement("div");
@@ -32,8 +32,9 @@ const createBoxes = () => {
 
 createboxBtn.addEventListener("click", createBoxes);
 
-const deleteBoxes = () => {
+function deleteBoxes (e)  {
   boxes.innerHTML = ""; 
+  input.value = "";
 };
 
 deleteboxBtn.addEventListener("click", deleteBoxes);
