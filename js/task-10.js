@@ -7,18 +7,19 @@ const createboxBtn = document.querySelector('button[data-create]');
 const deleteboxBtn = document.querySelector('button[data-destroy]');
 const boxes = document.querySelector("#boxes");
 
+let amount = 0;
 
 function inputChange(e)  {
-  input.setAttribute("count", Number(e.currentTarget.value));
+  const { value } = e.target;
+  amount = Number(value);
+  
 };
 input.addEventListener("input", inputChange);
 
 let baseboxSize = 30;
 
 function createBoxes (e) {
-  let countBox = Number(input.getAttribute("count"));
-  
-  for (let i = 0; i < countBox; i+=1) {
+  for (let i = 0; i < amount; i+=1) {
     baseboxSize += 10;
     const newBox = document.createElement("div");
     newBox.style.background = getRandomHexColor();
