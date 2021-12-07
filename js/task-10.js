@@ -36,6 +36,7 @@ createboxBtn.addEventListener("click", createBoxes);
 function deleteBoxes (e)  {
   boxes.innerHTML = ""; 
   input.value = "";
+  baseboxSize = 30;
 };
 
 deleteboxBtn.addEventListener("click", deleteBoxes);
